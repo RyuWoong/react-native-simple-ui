@@ -6,13 +6,12 @@ module.exports = {
   },
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    project: "./tsconfig.json",
+    project: ["./tsconfig.json", "./example/tsconfig.json"], // 여러 tsconfig.json 파일을 참조
     ecmaVersion: "latest",
     sourceType: "module",
   },
   plugins: ["@typescript-eslint", "import", "react", "jest", "prettier"],
   extends: [
-    "@react-native",
     "plugin:@typescript-eslint/recommended",
     "plugin:import/recommended",
     "plugin:react/recommended",

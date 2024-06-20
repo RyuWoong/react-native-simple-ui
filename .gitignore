@@ -5,3 +5,7 @@
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+.pnp.*
+
+node_modules
+dist
