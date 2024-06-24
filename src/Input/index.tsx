@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 import React, { ForwardedRef, ReactNode, forwardRef, useState } from "react";
 import {
   NativeSyntheticEvent,
@@ -17,6 +18,10 @@ interface Props extends TextInputProps {
   inputStyle?: TextStyle;
   toggle?: ReactNode;
 }
+
+let defaultPrimaryColor = "green";
+let defaultErrorColor = "red";
+let defaultDisableColor = "#dddddd";
 
 function Input(
   { disable, error, style, inputStyle, onFocus, onBlur, toggle, ...rest }: Props,
@@ -40,9 +45,9 @@ function Input(
       pointerEvents={!disable ? "auto" : "none"}
       style={[
         styles.Container,
-        // isFocused && { borderColor: Colors.PRIMARY6 },
-        // error && { borderColor: Colors.RED6 },
-        // disable && { backgroundColor: Colors.GRAY6 },
+        isFocused && { borderColor: defaultPrimaryColor },
+        error && { borderColor: defaultErrorColor },
+        disable && { backgroundColor: defaultDisableColor },
         style,
       ]}
     >
@@ -50,7 +55,7 @@ function Input(
         style={[styles.Input, inputStyle]}
         ref={ref}
         editable={!disable}
-        // placeholderTextColor={Colors.GRAY3}
+        placeholderTextColor={"lightgray"}
         onBlur={onBaseBlur}
         onFocus={onBaseFocus}
         maxFontSizeMultiplier={1}
@@ -67,8 +72,8 @@ const styles = StyleSheet.create({
     position: "relative",
     borderWidth: 1,
     borderRadius: 8,
-    // borderColor: Colors.GRAY3,
-    // backgroundColor: Colors.WHITE,
+    borderColor: "#eee",
+    backgroundColor: "#fff",
     height: 44,
     paddingHorizontal: 12,
     paddingVertical: 8,
@@ -77,9 +82,8 @@ const styles = StyleSheet.create({
   },
   Input: {
     flex: 1,
-    // fontFamily: fontFamilys.SUITRegular,
     fontSize: 16,
-    // color: Colors.GRAY9,
+    color: "#000",
     padding: 0,
     margin: 0,
   },

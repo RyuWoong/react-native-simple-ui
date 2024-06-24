@@ -12,39 +12,34 @@ export const defaultFontFamilys = {
   SUITThin: "SUIT-Thin",
 };
 
-export const defaultBoldFont = defaultFontFamilys.SUITBold;
+export type TypographyPreset =
+  | "Header1"
+  | "Header2"
+  | "Header3"
+  | "Header4"
+  | "Header5"
+  | "SubHeader1"
+  | "SubHeader2"
+  | "SubHeader3"
+  | "SubHeader4"
+  | "SubHeader5"
+  | "Label1"
+  | "Label2"
+  | "Label3"
+  | "Label4"
+  | "Label5";
 
-export const presetKeys = [
-  "Header1",
-  "Header2",
-  "Header3",
-  "Header4",
-  "Header5",
-  "SubHeader1",
-  "SubHeader2",
-  "SubHeader3",
-  "SubHeader4",
-  "SubHeader5",
-  "Label1",
-  "Label2",
-  "Label3",
-  "Label4",
-  "Label5",
-] as const;
-
-export type PresetKeys = (typeof presetKeys)[number];
-
-export const TypographyPreset: Record<string, TextStyle> = {
-  Header1: { fontFamily: defaultFontFamilys.SUITExtraBold, fontSize: 36 },
-  Header2: { fontFamily: defaultFontFamilys.SUITExtraBold, fontSize: 32 },
-  Header3: { fontFamily: defaultFontFamilys.SUITExtraBold, fontSize: 28 },
-  Header4: { fontFamily: defaultFontFamilys.SUITExtraBold, fontSize: 24 },
-  Header5: { fontFamily: defaultFontFamilys.SUITExtraBold, fontSize: 20 },
-  SubHeader1: { fontFamily: defaultFontFamilys.SUITRegular, fontSize: 36 },
-  SubHeader2: { fontFamily: defaultFontFamilys.SUITRegular, fontSize: 32 },
-  SubHeader3: { fontFamily: defaultFontFamilys.SUITRegular, fontSize: 28 },
-  SubHeader4: { fontFamily: defaultFontFamilys.SUITRegular, fontSize: 24 },
-  SubHeader5: { fontFamily: defaultFontFamilys.SUITRegular, fontSize: 20 },
+export const defaultTypographyPreset: Record<TypographyPreset, TextStyle> = {
+  Header1: { fontFamily: defaultFontFamilys.SUITExtraBold, fontSize: 40 },
+  Header2: { fontFamily: defaultFontFamilys.SUITExtraBold, fontSize: 36 },
+  Header3: { fontFamily: defaultFontFamilys.SUITExtraBold, fontSize: 32 },
+  Header4: { fontFamily: defaultFontFamilys.SUITExtraBold, fontSize: 28 },
+  Header5: { fontFamily: defaultFontFamilys.SUITExtraBold, fontSize: 24 },
+  SubHeader1: { fontFamily: defaultFontFamilys.SUITRegular, fontSize: 30 },
+  SubHeader2: { fontFamily: defaultFontFamilys.SUITRegular, fontSize: 26 },
+  SubHeader3: { fontFamily: defaultFontFamilys.SUITRegular, fontSize: 22 },
+  SubHeader4: { fontFamily: defaultFontFamilys.SUITRegular, fontSize: 18 },
+  SubHeader5: { fontFamily: defaultFontFamilys.SUITRegular, fontSize: 14 },
   Label1: {
     fontFamily: defaultFontFamilys.SUITRegular,
     fontSize: 20,
