@@ -14,11 +14,13 @@ module.exports = {
   extends: [
     "plugin:@typescript-eslint/recommended",
     "plugin:import/recommended",
+    "plugin:import/typescript",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
   ],
   overrides: [
     {
+      env: { jest: true },
       files: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
       extends: ["plugin:testing-library/react"],
     },
@@ -27,6 +29,7 @@ module.exports = {
     "import/extensions": [".js", ".jsx", ".ts", ".tsx", ".mjs"],
     "import/resolver": {
       typescript: {},
+      node: { paths: ["node_modules", "src/", "example/dist/"] },
     },
   },
   rules: {
@@ -55,9 +58,10 @@ module.exports = {
     ],
     "@typescript-eslint/no-use-before-define": "off",
     "react/prop-types": "off",
+    "prefer-const": "off",
     "react/require-default-props": "off",
     "@typescript-eslint/no-unused-vars": "warn",
     quotes: ["off", "double"],
   },
-  ignorePatterns: [".eslintrc.js", "metro.config.js", "jest.config.js", "babel.config.js"],
+  ignorePatterns: [".eslintrc.js", "metro.config.js", "jest.config.js", "jest.setup.js", "babel.config.js"],
 };
