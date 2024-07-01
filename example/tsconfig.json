@@ -1,0 +1,23 @@
+{
+  "display": "Expo",
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "esModuleInterop": true,
+    "jsx": "react-native",
+    "lib": ["DOM", "ESNext"],
+    "rootDir": "./",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "tsBuildInfoFile": "./dist/tsconfig.tsbuildinfo",
+    "strict": true,
+    "skipLibCheck": true,
+    "target": "ESNext",
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+
+  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts", "dist"],
+  "exclude": ["node_modules", "babel.config.js", "metro.config.js", "jest.config.js"]
+}
