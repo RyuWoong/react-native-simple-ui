@@ -1,0 +1,7 @@
+node_modules/
+example/
+__tests__/
+.husky/
+package-lock.json
+jest.config.js
+jest.setup.ts

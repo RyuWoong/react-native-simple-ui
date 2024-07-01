@@ -1,18 +1,22 @@
 {
-  "name": "react-native-simple-ui",
+  "name": "@ryuwoong/react-native-ui",
   "version": "0.0.1",
-  "description": "react-native-simple-ui",
+  "description": "react-native-ui",
   "main": "dist/index.js",
-  "repository": "https://github.com/RyuWoong/react-native-simple-ui.git",
+  "repository": "https://github.com/RyuWoong/react-native-ui.git",
   "author": "RyuWoong",
   "license": "MIT",
   "scripts": {
     "lint": "eslint",
     "format": "prettier --check ./src",
     "start": "rm -rf example/dist && tsc -p tsconfig.build.json -w --outDir example/dist",
-    "prepare": "rm -rf dist && tsc",
+    "prepare": "rm -rf dist && tsc -p tsconfig.build.json",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
     "husky": "husky install"
   },
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "*",
     "react-native": "*"
