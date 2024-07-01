@@ -1,6 +1,6 @@
 {
   "name": "@ryuwoong/react-native-ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "react-native-ui",
   "main": "dist/index.js",
   "repository": "https://github.com/RyuWoong/react-native-ui.git",
@@ -12,6 +12,7 @@
     "start": "rm -rf example/dist && tsc -p tsconfig.build.json -w --outDir example/dist",
     "prepare": "rm -rf dist && tsc -p tsconfig.build.json",
     "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "publish": "npm publish",
     "husky": "husky install"
   },
   "files": [
